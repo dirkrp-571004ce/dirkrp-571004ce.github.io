@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>人人美剧-美剧排行榜_最新美剧推荐_美剧追更指南</title>
+<meta name="description" content="人人美剧专题聚合页，提供2026年美剧排行榜、最新美剧更新动态与深度推荐。涵盖热门美剧类型解析、追更指南、角色关系盘点、用户评论与常见问题，适合美剧迷收藏与持续关注。">
+<meta name="keywords" content="人人美剧,美剧排行榜,最新美剧推荐,美剧更新,美剧追更">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231e1b2e'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23e8b45a' font-family='Arial' font-weight='bold'%3E美%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d0c14;
+  --surface:#16151f;
+  --surface2:#1d1b2b;
+  --border:#2b2839;
+  --text:#f2eef7;
+  --text2:#b7aec9;
+  --text3:#7c7392;
+  --accent:#e8b45a;
+  --accent2:#b48ef5;
+  --accent3:#f27e9d;
+  --radius:16px;
+  --shadow:0 8px 28px rgba(0,0,0,.45);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font);
+  line-height:1.7;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
+section{scroll-margin-top:80px;}
+
+/* nav */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,12,20,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;gap:16px;
+}
+.logo{
+  display:flex;align-items:center;gap:9px;
+  font-weight:800;font-size:19px;letter-spacing:.5px;white-space:nowrap;
+}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  display:grid;place-items:center;
+  font-size:17px;color:#1a1622;font-weight:900;
+  box-shadow:0 4px 14px rgba(232,180,90,.35);
+}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-links a{
+  padding:6px 13px;border-radius:999px;font-size:13.5px;color:var(--text2);
+  transition:.2s;white-space:nowrap;
+}
+.nav-links a:hover{background:var(--surface2);color:var(--accent);}
+.nav-search{
+  display:flex;align-items:center;gap:6px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:999px;padding:5px 6px 5px 14px;min-width:180px;
+}
+.nav-search input{
+  background:none;border:none;outline:none;color:var(--text);
+  font-size:13px;font-family:var(--font);width:100%;
+}
+.nav-search input::placeholder{color:var(--text3);}
+.nav-search button{
+  background:var(--accent);border:none;border-radius:999px;
+  width:28px;height:28px;cursor:pointer;color:#1a1622;font-size:14px;
+  display:grid;place-items:center;flex-shrink:0;
+}
+
+/* banner */
+.banner{
+  position:relative;overflow:hidden;
+  padding:56px 0 48px;
+  background:
+    radial-gradient(ellipse 70% 90% at 15% 10%,rgba(232,180,90,.14),transparent 55%),
+    radial-gradient(ellipse 60% 80% at 90% 20%,rgba(180,142,245,.16),transparent 55%),
+    linear-gradient(160deg,#16131f,#0d0c14 60%);
+  border-bottom:1px solid var(--border);
+}
+.banner::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23ffffff' opacity='0.04'/%3E%3C/svg%3E");
+}
+.banner .wrap{position:relative;z-index:2;}
+.banner-grid{
+  display:grid;grid-template-columns:1.25fr .85fr;gap:44px;align-items:center;
+}
+.banner h1{
+  font-size:clamp(28px,4.2vw,44px);
+  font-weight:900;line-height:1.22;letter-spacing:-.5px;
+  margin-bottom:16px;
+}
+.banner h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.banner-desc{
+  font-size:15px;color:var(--text2);max-width:560px;margin-bottom:22px;
+}
+.banner-search{
+  display:flex;gap:10px;max-width:500px;margin-bottom:24px;
+}
+.banner-search input{
+  flex:1;background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:13px 18px;color:var(--text);
+  font-size:14px;font-family:var(--font);outline:none;transition:.2s;
+}
+.banner-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(232,180,90,.12);}
+.banner-search button{
+  background:linear-gradient(135deg,var(--accent),#f0a54b);
+  border:none;border-radius:12px;padding:0 26px;
+  font-size:14.5px;font-weight:700;color:#1a1622;cursor:pointer;
+  font-family:var(--font);white-space:nowrap;transition:.2s;
+}
+.banner-search button:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(232,180,90,.3);}
+.banner-tags{display:flex;flex-wrap:wrap;gap:9px;}
+.banner-tags a{
+  padding:7px 16px;border-radius:999px;font-size:13px;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  color:var(--text2);transition:.2s;
+}
+.banner-tags a:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,180,90,.08);}
+.banner-poster{
+  aspect-ratio:4/3;border-radius:22px;
+  background:
+    radial-gradient(circle at 30% 30%,rgba(232,180,90,.28),transparent 55%),
+    radial-gradient(circle at 75% 65%,rgba(180,142,245,.3),transparent 55%),
+    linear-gradient(145deg,#221d30,#14111d);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;position:relative;overflow:hidden;
+}
+.banner-poster::before{
+  content:"US SERIES";position:absolute;top:24px;right:26px;
+  font-size:11px;letter-spacing:3px;color:var(--text3);font-weight:700;
+}
+.banner-poster .bp-title{font-size:22px;font-weight:800;margin-bottom:6px;}
+.banner-poster .bp-sub{font-size:13px;color:var(--text2);}
+.banner-poster .bp-badge{
+  display:inline-block;margin-top:14px;padding:5px 14px;
+  border-radius:999px;font-size:12px;font-weight:700;
+  background:rgba(232,180,90,.15);color:var(--accent);width:fit-content;
+}
+
+/* section headers */
+.sec{padding:52px 0;}
+.sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:28px;flex-wrap:wrap;
+}
+.sec-head h2{
+  font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:-.3px;
+  display:flex;align-items:center;gap:11px;
+}
+.sec-head h2::before{
+  content:"";width:5px;height:23px;border-radius:3px;
+  background:linear-gradient(var(--accent),var(--accent3));
+}
+.sec-head p{font-size:13.5px;color:var(--text3);}
+.sec-more{
+  font-size:13px;color:var(--accent);font-weight:600;padding:6px 15px;
+  border:1px solid rgba(232,180,90,.3);border-radius:999px;transition:.2s;
+}
+.sec-more:hover{background:rgba(232,180,90,.1);}
+
+/* intro */
+.intro-box{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:34px 36px;
+  box-shadow:var(--shadow);
+}
+.intro-box p{font-size:14.5px;color:var(--text2);margin-bottom:15px;}
+.intro-box p:last-child{margin-bottom:0;}
+.intro-box strong{color:var(--accent);font-weight:700;}
+.intro-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;
+}
+.intro-cell{
+  background:var(--surface2);border-radius:12px;padding:18px 20px;
+  border:1px solid var(--border);
+}
+.intro-cell .ic-num{font-size:24px;font-weight:900;color:var(--accent);line-height:1.2;}
+.intro-cell .ic-label{font-size:13px;color:var(--text3);margin-top:3px;}
+
+/* category chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;}
+.chips a{
+  padding:9px 20px;border-radius:999px;font-size:13.5px;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--text2);transition:.2s;
+}
+.chips a:hover,.chips a.active{
+  background:rgba(232,180,90,.12);border-color:var(--accent);color:var(--accent);
+}
+
+/* rank cards */
+.rank-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.rank-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;position:relative;
+  transition:.25s;box-shadow:var(--shadow);overflow:hidden;
+}
+.rank-card:hover{transform:translateY(-4px);border-color:rgba(232,180,90,.4);}
+.rank-card .rc-rank{
+  position:absolute;top:16px;right:18px;
+  font-size:13px;font-weight:900;color:var(--text3);
+  opacity:.5;
+}
+.rank-card .rc-rank.top{color:var(--accent);opacity:1;}
+.rank-card h3{font-size:16.5px;font-weight:700;margin-bottom:9px;padding-right:30px;}
+.rank-tag{
+  display:inline-block;padding:3px 11px;border-radius:999px;
+  font-size:11.5px;font-weight:600;margin-right:6px;margin-bottom:10px;
+}
+.tag-a{background:rgba(232,180,90,.14);color:var(--accent);}
+.tag-b{background:rgba(180,142,245,.16);color:var(--accent2);}
+.tag-c{background:rgba(242,126,157,.14);color:var(--accent3);}
+.tag-d{background:rgba(94,200,180,.13);color:#5ec8b4;}
+.rank-card .rc-desc{font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.65;}
+.rank-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--text3);padding-top:12px;
+  border-top:1px solid var(--border);
+}
+.rank-meta .rm-hot{color:var(--accent);font-weight:600;}
+
+/* update list */
+.upd-list{display:flex;flex-direction:column;gap:0;}
+.upd-item{
+  display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
+  padding:17px 6px;border-bottom:1px solid var(--border);transition:.2s;
+}
+.upd-item:hover{background:rgba(255,255,255,.02);}
+.upd-item:last-child{border-bottom:none;}
+.upd-badge{
+  width:46px;height:46px;border-radius:12px;flex-shrink:0;
+  display:grid;place-items:center;font-size:12px;font-weight:800;
+  background:var(--surface2);border:1px solid var(--border);color:var(--accent);
+  text-align:center;line-height:1.2;
+}
+.upd-main h4{font-size:14.5px;font-weight:700;margin-bottom:2px;}
+.upd-main p{font-size:12.5px;color:var(--text3);}
+.upd-time{font-size:12px;color:var(--text3);white-space:nowrap;}
+
+/* analysis */
+.analysis-wrap{
+  display:grid;grid-template-columns:1.6fr 1fr;gap:34px;align-items:start;
+}
+.analysis-body{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);
+}
+.analysis-body h3{font-size:18px;font-weight:800;margin:26px 0 12px;color:var(--accent);}
+.analysis-body h3:first-child{margin-top:0;}
+.analysis-body p{font-size:14.5px;color:var(--text2);margin-bottom:14px;}
+.analysis-body p:last-child{margin-bottom:0;}
+.analysis-side{display:flex;flex-direction:column;gap:16px;}
+.side-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
+}
+.side-card h4{font-size:14px;font-weight:700;margin-bottom:13px;color:var(--text);}
+.side-card ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.side-card li{font-size:13px;color:var(--text2);display:flex;gap:9px;align-items:flex-start;}
+.side-card li::before{content:"▸";color:var(--accent);flex-shrink:0;font-size:11px;margin-top:3px;}
+.side-stat{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-bottom:1px dashed var(--border);color:var(--text2);}
+.side-stat:last-child{border-bottom:none;}
+.side-stat b{color:var(--accent);}
+
+/* guide */
+.guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.guide-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px 22px;transition:.25s;
+}
+.guide-card:hover{transform:translateY(-3px);border-color:rgba(232,180,90,.35);}
+.guide-icon{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  font-size:20px;margin-bottom:16px;
+  background:rgba(232,180,90,.12);color:var(--accent);
+}
+.guide-card h4{font-size:15px;font-weight:700;margin-bottom:7px;}
+.guide-card p{font-size:12.5px;color:var(--text2);line-height:1.65;}
+
+/* faq */
+.faq-list{display:flex;flex-direction:column;gap:12px;}
+.faq-item{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;transition:.2s;
+}
+.faq-item[open]{border-color:rgba(232,180,90,.35);}
+.faq-item summary{
+  padding:17px 22px;font-size:14.5px;font-weight:600;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+  color:var(--text);transition:.2s;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"＋";color:var(--accent);font-weight:400;font-size:17px;}
+.faq-item[open] summary::after{content:"－";}
+.faq-item summary:hover{color:var(--accent);}
+.faq-answer{padding:0 22px 18px;font-size:13.5px;color:var(--text2);line-height:1.75;}
+
+/* comments */
+.cmt-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.cmt-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:19px 21px;transition:.2s;
+}
+.cmt-card:hover{border-color:rgba(180,142,245,.35);}
+.cmt-head{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.cmt-avatar{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;font-size:15px;font-weight:800;
+  color:#1a1622;
+}
+.av1{background:linear-gradient(135deg,#e8b45a,#f2a06b);}
+.av2{background:linear-gradient(135deg,#b48ef5,#8a7cf0);}
+.av3{background:linear-gradient(135deg,#f27e9d,#f5a3b8);}
+.av4{background:linear-gradient(135deg,#5ec8b4,#7fd8c5);}
+.av5{background:linear-gradient(135deg,#f0c46a,#e8b45a);}
+.cmt-name{font-size:13px;font-weight:700;}
+.cmt-time{font-size:11px;color:var(--text3);margin-left:auto;}
+.cmt-text{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* news */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.news-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px;transition:.25s;
+  display:flex;flex-direction:column;gap:10px;
+}
+.news-card:hover{transform:translateY(-4px);border-color:rgba(242,126,157,.35);}
+.news-date{font-size:12px;color:var(--text3);font-weight:600;}
+.news-card h4{font-size:15px;font-weight:700;line-height:1.5;}
+.news-card p{font-size:13px;color:var(--text2);line-height:1.65;flex:1;}
+
+/* footer */
+.footer{
+  background:var(--surface);border-top:1px solid var(--border);
+  padding:44px 0 28px;margin-top:20px;
+}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:34px;}
+.footer-brand .logo{margin-bottom:14px;}
+.footer-brand p{font-size:13px;color:var(--text3);line-height:1.7;max-width:300px;}
+.footer-col h5{font-size:13.5px;font-weight:700;margin-bottom:13px;color:var(--text);}
+.footer-col a{display:block;font-size:13px;color:var(--text3);margin-bottom:9px;transition:.2s;}
+.footer-col a:hover{color:var(--accent);}
+.footer-bottom{
+  border-top:1px solid var(--border);padding-top:22px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:var(--text3);
+}
+
+@media(max-width:960px){
+  .banner-grid{grid-template-columns:1fr;gap:30px;}
+  .banner-poster{max-width:480px;}
+  .rank-grid{grid-template-columns:repeat(2,1fr);}
+  .analysis-wrap{grid-template-columns:1fr;}
+  .guide-grid{grid-template-columns:repeat(2,1fr);}
+  .news-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+}
+@media(max-width:640px){
+  .wrap{padding:0 15px;}
+  .nav-inner{height:56px;}
+  .nav-search{min-width:0;flex:1;max-width:180px;}
+  .banner{padding:38px 0 34px;}
+  .banner-search{flex-direction:column;}
+  .banner-search button{padding:12px;width:100%;}
+  .rank-grid{grid-template-columns:1fr;}
+  .cmt-list{grid-template-columns:1fr;}
+  .news-grid{grid-template-columns:1fr;}
+  .guide-grid{grid-template-columns:1fr;}
+  .intro-grid{grid-template-columns:1fr;}
+  .sec{padding:38px 0;}
+  .analysis-body{padding:24px;}
+  .footer-grid{grid-template-columns:1fr;gap:26px;}
+  .upd-item{grid-template-columns:auto 1fr;gap:12px;}
+  .upd-time{grid-column:2;font-size:11px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/#top" class="logo">
+      <span class="logo-mark">美</span>
+      人人<span>美剧</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#rank-hot">热门榜单</a>
+      <a href="/#latest-update">最新更新</a>
+      <a href="/#deep-analysis">深度解析</a>
+      <a href="/#watch-guide">追更指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#community">剧迷评论</a>
+    </div>
+    <div class="nav-search">
+      <input type="text" placeholder="搜索美剧、演员或类型…" aria-label="搜索美剧">
+      <button aria-label="搜索">🔍</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Banner -->
+<header class="banner" id="top">
+  <div class="wrap">
+    <div class="banner-grid">
+      <div>
+        <h1>人人美剧 · 发现值得追的<em>好剧</em></h1>
+        <p class="banner-desc">
+          从悬疑犯罪到科幻史诗，从律政职场到家庭喜剧，人人美剧专题为你整理2026年值得关注的美剧榜单、更新动态与深度看点。无论你是刚入坑的新观众，还是追了多年的老剧迷，这里都能找到下一部让你熬夜的理由。
+        </p>
+        <div class="banner-search">
+          <input type="text" placeholder="输入剧名、类型或演员名，快速查找…" aria-label="搜索美剧内容">
+          <button>立即搜索</button>
+        </div>
+        <div class="banner-tags">
+          <a href="/#rank-hot">口碑高分剧</a>
+          <a href="/#latest-update">本周更新</a>
+          <a href="/#deep-analysis">新剧解析</a>
+          <a href="/#watch-guide">追更日历</a>
+          <a href="/#community">剧迷讨论</a>
+          <a href="/#faq">新手答疑</a>
+          <a href="/#news-feed">行业资讯</a>
+          <a href="/#rank-new">新剧速递</a>
+        </div>
+      </div>
+      <div class="banner-poster">
+        <div class="bp-title">本周编辑精选</div>
+        <div class="bp-sub">悬疑 · 犯罪 · 律政 · 科幻 多类型覆盖</div>
+        <span class="bp-badge">2026 秋季档 · 持续更新中</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 内容简介 -->
+<section class="sec" id="intro">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>人人美剧专题简介</h2>
+      <p>为什么值得收藏这个页面</p>
+    </div>
+    <div class="intro-box">
+      <p>
+        <strong>人人美剧</strong>这个关键词背后，往往代表着一种明确的内容需求：观众想找到近期值得追的高质量美剧，了解哪些剧集口碑好、更新到第几集、演员阵容如何，以及不同类型之间的差异。这个专题页正是围绕这些需求整理的——它不只是一份简单的剧单，更像是一个持续更新的美剧观察站。
+      </p>
+      <p>
+        对于刚接触美剧的观众，页面提供了类型入门和追更顺序参考；对于老剧迷，这里有深度解析、角色关系梳理和行业动态。页面涵盖悬疑犯罪、科幻奇幻、律政职场、家庭喜剧、历史传记等主流类型，每部推荐都配有简明的看点提示和热度参考，方便快速判断是否合胃口。
+      </p>
+      <p>
+        和零散搜索相比，人人美剧专题页把榜单、更新、解析、FAQ和剧迷评论放在同一个阅读路径里，减少反复跳转的麻烦。你可以先看排行榜建立整体印象，再通过深度解析了解某部剧的独特之处，最后在评论区感受真实观众的讨论氛围。收藏这个页面，等于给自己准备了一个随时可查的美剧信息入口。
+      </p>
+      <div class="intro-grid">
+        <div class="intro-cell">
+          <div class="ic-num">12+</div>
+          <div class="ic-label">类型覆盖与榜单维度</div>
+        </div>
+        <div class="intro-cell">
+          <div class="ic-num">40+</div>
+          <div class="ic-label">剧集与专题条目收录</div>
+        </div>
+        <div class="intro-cell">
+          <div class="ic-num">每周</div>
+          <div class="ic-label">更新动态与资讯追踪</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<section class="sec" id="category">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>按类型快速筛选</h2>
+      <p>找到你偏爱的美剧类型</p>
+    </div>
+    <div class="chips">
+      <a href="/#rank-hot" class="active">全部</a>
+      <a href="/#rank-hot">悬疑犯罪</a>
+      <a href="/#rank-hot">科幻奇幻</a>
+      <a href="/#rank-hot">律政职场</a>
+      <a href="/#rank-hot">家庭喜剧</a>
+      <a href="/#rank-hot">历史传记</a>
+      <a href="/#rank-hot">恐怖惊悚</a>
+      <a href="/#rank-hot">青春校园</a>
+      <a href="/#rank-hot">动作冒险</a>
+    </div>
+  </div>
+</section>
+
+<!-- 热门榜单 -->
+<section class="sec" id="rank-hot">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>人人美剧热门榜单</h2>
+      <p>近期讨论度与口碑综合推荐</p>
+      <a href="/#latest-update" class="sec-more">查看更新 →</a>
+    </div>
+    <div class="rank-grid">
+      <div class="rank-card">
+        <span class="rc-rank top">NO.1</span>
+        <h3>《裂隙之城》</h3>
+        <span class="rank-tag tag-a">悬疑犯罪</span><span class="rank-tag tag-b">高能反转</span>
+        <p class="rc-desc">一座被遗忘的工业城市里，连环案件牵出二十年前的旧案。双线叙事节奏紧凑，第四集后的反转被剧迷反复讨论。</p>
+        <div class="rank-meta"><span>更新至 S02E06</span><span class="rm-hot">热度 98.2</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank top">NO.2</span>
+        <h3>《星环之外》</h3>
+        <span class="rank-tag tag-b">科幻史诗</span><span class="rank-tag tag-d">太空歌剧</span>
+        <p class="rc-desc">人类殖民舰队在星环边缘遭遇未知信号，科学与信仰的冲突贯穿全季。视觉效果和世界观构建是最大亮点。</p>
+        <div class="rank-meta"><span>更新至 S01E09</span><span class="rm-hot">热度 95.6</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank top">NO.3</span>
+        <h3>《最后辩词》</h3>
+        <span class="rank-tag tag-c">律政职场</span><span class="rank-tag tag-a">法庭对决</span>
+        <p class="rc-desc">聚焦公设辩护人办公室，每集一个案件，主线穿插主角的职业困境。台词密度高，适合喜欢思辨型内容的观众。</p>
+        <div class="rank-meta"><span>更新至 S03E11</span><span class="rm-hot">热度 92.1</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank">NO.4</span>
+        <h3>《北区日常》</h3>
+        <span class="rank-tag tag-d">家庭喜剧</span><span class="rank-tag tag-a">治愈群像</span>
+        <p class="rc-desc">一个多代同堂家庭在郊区的生活切片，笑点自然不刻意。适合下班后放松观看，单集25分钟节奏舒适。</p>
+        <div class="rank-meta"><span>更新至 S05E04</span><span class="rm-hot">热度 88.7</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank">NO.5</span>
+        <h3>《铁锈年代》</h3>
+        <span class="rank-tag tag-a">历史传记</span><span class="rank-tag tag-c">时代群像</span>
+        <p class="rc-desc">以钢铁小镇的兴衰为背景，讲述三代工人的命运变迁。服化道考究，叙事沉稳，适合偏好年代剧的观众。</p>
+        <div class="rank-meta"><span>全季完结</span><span class="rm-hot">热度 86.4</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank">NO.6</span>
+        <h3>《潮汐线》</h3>
+        <span class="rank-tag tag-c">恐怖惊悚</span><span class="rank-tag tag-b">氛围向</span>
+        <p class="rc-desc">海边小镇每逢大潮便发生怪事，女主角调查母亲失踪真相。不靠jump scare，靠环境和音效营造压迫感。</p>
+        <div class="rank-meta"><span>更新至 S01E05</span><span class="rm-hot">热度 84.9</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank">NO.7</span>
+        <h3>《候补名单》</h3>
+        <span class="rank-tag tag-b">青春校园</span><span class="rank-tag tag-d">成长喜剧</span>
+        <p class="rc-desc">一群被名校候补录取的高中生在等待中重新认识自己。轻松外壳下有对教育焦虑的温和讨论，台词幽默。</p>
+        <div class="rank-meta"><span>更新至 S02E08</span><span class="rm-hot">热度 82.3</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank">NO.8</span>
+        <h3>《深空信使》</h3>
+        <span class="rank-tag tag-d">动作冒险</span><span class="rank-tag tag-b">科幻动作</span>
+        <p class="rc-desc">退役飞行员被召回执行跨星系快递任务，一路遭遇星际黑帮与公司阴谋。节奏明快，动作场面扎实。</p>
+        <div class="rank-meta"><span>更新至 S01E07</span><span class="rm-hot">热度 80.5</span></div>
+      </div>
+      <div class="rank-card">
+        <span class="rc-rank">NO.9</span>
+        <h3>《厨房暗号》</h3>
+        <span class="rank-tag tag-a">职场喜剧</span><span class="rank-tag tag-c">美食元素</span>
+        <p class="rc-desc">米其林餐厅后厨的生存实录，主厨与学徒的博弈笑中带泪。对餐饮行业的细节还原度很高，节奏轻快。</p>
+        <div class="rank-meta"><span>更新至 S04E02</span><span class="rm-hot">热度 78.6</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新更新 -->
+<section class="sec" id="latest-update">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>最新美剧更新与动态</h2>
+      <p>截至2026年11月7日整理</p>
+      <a href="/#watch-guide" class="sec-more">追更指南 →</a>
+    </div>
+    <div class="upd-list">
+      <div class="upd-item">
+        <div class="upd-badge">S02<br>E06</div>
+        <div class="upd-main"><h4>《裂隙之城》</h4><p>第六集上线，旧案线索与当前案件正式交汇，结尾彩蛋暗示下季反派登场。</p></div>
+        <div class="upd-time">11月6日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S01<br>E09</div>
+        <div class="upd-main"><h4>《星环之外》</h4><p>第九集更新，舰队抵达星环核心区，关于信号来源的真相揭开第一层。</p></div>
+        <div class="upd-time">11月5日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S03<br>E11</div>
+        <div class="upd-main"><h4>《最后辩词》</h4><p>第十一集上线，主角接手一桩涉及举报人的敏感案件，法庭戏份拉满。</p></div>
+        <div class="upd-time">11月5日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S05<br>E04</div>
+        <div class="upd-main"><h4>《北区日常》</h4><p>第四集更新，家中长辈的旧友来访，引发一连串误会与和解。</p></div>
+        <div class="upd-time">11月4日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S01<br>E05</div>
+        <div class="upd-main"><h4>《潮汐线》</h4><p>第五集上线，大潮之夜的关键场景被剧迷称为本季最佳氛围段落。</p></div>
+        <div class="upd-time">11月3日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S02<br>E08</div>
+        <div class="upd-main"><h4>《候补名单》</h4><p>第八集更新，候补结果公布，主角团面临友情与选择的两难。</p></div>
+        <div class="upd-time">11月2日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S01<br>E07</div>
+        <div class="upd-main"><h4>《深空信使》</h4><p>第七集上线，快递任务升级为星际追逐战，动作设计获好评。</p></div>
+        <div class="upd-time">11月1日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">S04<br>E02</div>
+        <div class="upd-main"><h4>《厨房暗号》</h4><p>第二集更新，餐厅迎来神秘美食评论家，后厨全员进入备战状态。</p></div>
+        <div class="upd-time">10月31日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">新剧</div>
+        <div class="upd-main"><h4>《雾港档案》</h4><p>全新悬疑剧集首播，第一集即抛出三起看似无关的案件，值得关注。</p></div>
+        <div class="upd-time">10月30日</div>
+      </div>
+      <div class="upd-item">
+        <div class="upd-badge">续订</div>
+        <div class="upd-main"><h4>《铁锈年代》</h4><p>平台确认续订衍生剧，将聚焦第二代角色的独立故事线。</p></div>
+        <div class="upd-time">10月29日</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 深度解析 -->
+<section class="sec" id="deep-analysis">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>人人美剧深度解析</h2>
+      <p>从类型、人物到观看节奏</p>
+    </div>
+    <div class="analysis-wrap">
+      <div class="analysis-body">
+        <h3>美剧类型的核心吸引力在哪里</h3>
+        <p>美剧之所以能持续吸引全球观众，很大程度上在于它对类型叙事的成熟运用。悬疑犯罪类擅长在单集内完成一个小闭环，同时用主线案件串联整季，让观众既有即时满足感，又有长期追看的动力。科幻奇幻类则更依赖世界观搭建，好的科幻剧不会一上来就堆设定，而是通过角色的日常选择让观众逐步理解规则。律政和职场剧的魅力在于专业细节与人性博弈的结合，案件或项目只是载体，真正好看的是人在压力下的反应。</p>
+        <p>家庭喜剧和青春校园类看起来轻松，但优秀的作品往往在笑点之下埋着对现实议题的温和观察。历史传记类则考验制作团队对时代质感的还原能力，服化道、语言习惯、社会氛围缺一不可。人人美剧专题在推荐时特别关注这些类型差异，而不是把所有剧集混为一谈。</p>
+        <h3>人物分析：好角色比强情节更留人</h3>
+        <p>很多剧集前期靠高概念吸引观众，但真正让人追下去的是角色。以《裂隙之城》为例，主角并不是传统意义上的天才侦探，她的执念和脆弱同时存在，办案过程中的判断失误反而让角色更可信。《最后辩词》里公设辩护人的职业困境也不是靠台词喊出来的，而是通过一个个具体案件的取舍慢慢呈现。观众在人人美剧的评论区里讨论最多的往往不是“凶手是谁”，而是“这个角色为什么这么做”。</p>
+        <p>群像剧的难度更高。《北区日常》能让每个家庭成员都有自己的小弧光，不把配角当工具人，这是它播出五季仍保持口碑的关键。科幻剧《星环之外》则把冲突分散在舰桥、引擎室和平民舱之间，让不同立场的角色都有表达空间。</p>
+        <h3>节奏与消费体验：找到适合自己的追剧方式</h3>
+        <p>美剧的更新节奏和国内观众的习惯存在差异。公共台通常周更，有线台和流媒体则可能一次性放出全季。人人美剧页面在整理更新信息时会标注当前进度，方便观众判断是适合“养肥再看”还是“追更讨论”。悬疑类作品如果担心被剧透，可以考虑攒几集一起看；喜剧和职场剧单集独立性较强，周更反而更有陪伴感。</p>
+        <p>另外，试播集往往承担大量铺垫功能，如果第一集节奏偏慢，不一定代表整部剧拖沓。建议参考页面中的类型标签和看点描述，结合自己对节奏的偏好做选择。页面里的热度数据是综合讨论量和评分趋势的模拟参考，不是绝对标准，但能帮助快速排除明显不合口味的选项。</p>
+        <h3>搜索人人美剧时，观众通常想了解什么</h3>
+        <p>从搜索意图来看，多数人希望快速获得三类信息：近期有哪些值得看的新剧或回归剧、某部剧的更新进度和口碑如何、以及同类型里有没有替代选择。人人美剧专题页把榜单、更新列表和类型筛选放在靠前位置，正是为了回应这些高频需求。深度解析部分则面向想进一步了解创作背景和观看角度的观众，FAQ和评论区补充了具体问题与真实观感。整个页面的信息层次从“快速扫一眼”到“仔细读一读”都有覆盖。</p>
+      </div>
+      <div class="analysis-side">
+        <div class="side-card">
+          <h4>类型热度速览</h4>
+          <div class="side-stat"><span>悬疑犯罪</span><b>★★★★★</b></div>
+          <div class="side-stat"><span>科幻奇幻</span><b>★★★★☆</b></div>
+          <div class="side-stat"><span>律政职场</span><b>★★★★☆</b></div>
+          <div class="side-stat"><span>家庭喜剧</span><b>★★★★</b></div>
+          <div class="side-stat"><span>历史传记</span><b>★★★☆</b></div>
+        </div>
+        <div class="side-card">
+          <h4>编辑追剧提示</h4>
+          <ul>
+            <li>悬疑剧尽量避开评论区剧透</li>
+            <li>科幻新剧先看世界观是否合拍</li>
+            <li>喜剧适合碎片时间周更追看</li>
+            <li>律政剧留意台词密度是否适应</li>
+            <li>年代剧可先看服化道质感再决定</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h4>更新观察</h4>
+          <p style="font-size:13px;color:var(--text2);line-height:1.7;">2026年秋季档整体类型分布较均衡，悬疑和科幻仍是流媒体投入重点，家庭喜剧出现小幅回暖。人人美剧会持续跟进各剧续订与档期变化。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 追更指南 -->
+<section class="sec" id="watch-guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>人人美剧追更与体验指南</h2>
+      <p>让浏览和追剧更顺手</p>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-icon">🗂️</div>
+        <h4>分类筛选清晰</h4>
+        <p>按悬疑、科幻、喜剧等类型快速缩小范围，不用在无关剧集里反复翻找。</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">📱</div>
+        <h4>移动端阅读友好</h4>
+        <p>卡片和列表在手机上自动调整，等车或睡前刷更新不费眼，信息层级保持清楚。</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">🔖</div>
+        <h4>适合收藏回访</h4>
+        <p>更新进度和榜单会持续调整，收藏页面方便下次快速查看最新变化。</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">🧭</div>
+        <h4>推荐路径自然</h4>
+        <p>从榜单到解析再到评论，浏览路径连贯，容易发现原本没注意到的同类型好剧。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>人人美剧常见问题</h2>
+      <p>新手与老剧迷都可能关心</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>第一次看美剧，应该从什么类型入手？</summary>
+        <div class="faq-answer">如果平时看国产剧或日韩剧较多，可以从家庭喜剧或律政职场剧开始，单集节奏相对独立，人物关系不至于太复杂。家庭喜剧如《北区日常》每集25分钟左右，笑点密集，适合试水。对强情节有偏好的观众可以直接尝试悬疑犯罪类，但建议从单季完结或口碑稳定的剧开始，减少追更压力。</div>
+      </details>
+      <details class="faq-item">
+        <summary>人人美剧页面里的“热度”是怎么理解的？</summary>
+        <div class="faq-answer">页面中的热度是综合近期讨论量、评分趋势和更新关注度的模拟参考值，不是官方收视数据。它可以用来快速判断一部剧当前是否处于话题中心，但不必作为唯一标准。有些慢热型剧集热度中等，实际观看体验可能更适合你。建议结合类型标签和看点描述一起判断。</div>
+      </details>
+      <details class="faq-item">
+        <summary>悬疑类美剧一周更新一集，怎么避免被剧透？</summary>
+        <div class="faq-answer">最直接的方法是减少在更新日前后浏览评论区，尤其是带“反转”“凶手”字样的讨论。人人美剧的评论模块一般以观感为主，但其他平台可能存在详细剧透。也可以选择攒三到四集再看，既保留悬念又减少等待焦虑。如果实在怕剧透，等整季完结后一次性观看也是很多剧迷的选择。</div>
+      </details>
+      <details class="faq-item">
+        <summary>科幻美剧世界观太复杂，跟不上怎么办？</summary>
+        <div class="faq-answer">科幻剧通常需要两三集来建立规则，前几集出现陌生术语很正常。建议不要暂停去查设定，先跟着角色走，很多概念会在后续情节中自然解释。《星环之外》这类作品尤其如此，第一集的重点是人物关系和危机感，技术细节可以后面再补。如果看完前三集仍觉得门槛过高，可以换更偏冒险动作的科幻剧过渡。</div>
+      </details>
+      <details class="faq-item">
+        <summary>页面推荐的剧集和实际口碑一致吗？</summary>
+        <div class="faq-answer">推荐基于类型覆盖、近期讨论度和编辑综合判断，尽量兼顾不同口味，但观影偏好非常个人化。同一部剧有人觉得节奏紧凑，也有人觉得铺垫过长。建议把推荐卡片当作初筛工具，重点看类型标签和简短看点是否符合你的兴趣，再决定是否投入时间。评论区里的真实观感也是重要参考。</div>
+      </details>
+      <details class="faq-item">
+        <summary>想找类似《裂隙之城》的悬疑剧，有什么方向？</summary>
+        <div class="faq-answer">可以优先关注双线叙事和旧案重启类作品，这类剧通常既有单元案件又有主线悬念。页面中的悬疑犯罪分类下还有《雾港档案》等新剧，氛围偏冷峻。如果更看重法庭与调查结合，可以看看律政类中涉及刑事案件的条目。建议先看两集试播，确认叙事节奏是否合拍再继续。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 用户评论 -->
+<section class="sec" id="community">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>剧迷评论区</h2>
+      <p>近期真实观感与讨论</p>
+    </div>
+    <div class="cmt-list">
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av1">夜</div><span class="cmt-name">夜航星</span><span class="cmt-time">11月6日</span></div>
+        <p class="cmt-text">《裂隙之城》第六集结尾那个镜头信息量太大了，前面埋的线终于连上了。不过我觉得这季中段有几集稍微拖，希望后面收得住。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av2">河</div><span class="cmt-name">河边散步</span><span class="cmt-time">11月5日</span></div>
+        <p class="cmt-text">《星环之外》的视觉确实在线，但我更想夸配乐，第九集那段静默处理太高级了。科幻剧能拍出这种克制感不容易。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av3">小</div><span class="cmt-name">小满不忙</span><span class="cmt-time">11月5日</span></div>
+        <p class="cmt-text">《北区日常》我当下饭剧看的，结果越看越上头。第五季第四集长辈那条线有点好哭，编剧真的很会写日常。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av4">律</div><span class="cmt-name">律政小透明</span><span class="cmt-time">11月4日</span></div>
+        <p class="cmt-text">《最后辩词》这季案件质量比上季稳，第八集那个举报人案子讨论度很高。就是台词太密了，有时候得倒回去看字幕。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av5">潮</div><span class="cmt-name">潮汐观察员</span><span class="cmt-time">11月3日</span></div>
+        <p class="cmt-text">《潮汐线》第五集氛围拉满，但前四集节奏是真的慢热。喜欢快节奏的估计会弃，喜欢心理压迫感的可以坚持一下。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av1">候</div><span class="cmt-name">候补生A</span><span class="cmt-time">11月2日</span></div>
+        <p class="cmt-text">《候补名单》第二季比第一季成熟，角色没有第一季那么脸谱化了。第八集的选择题拍得挺真实，没有强行大团圆。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av2">深</div><span class="cmt-name">深空快递员</span><span class="cmt-time">11月1日</span></div>
+        <p class="cmt-text">《深空信使》属于那种不费脑但看着爽的剧，动作设计确实用心。剧情逻辑不能细抠，但作为周末放松完全合格。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av3">厨</div><span class="cmt-name">后厨打杂</span><span class="cmt-time">10月31日</span></div>
+        <p class="cmt-text">《厨房暗号》第四季第二集那个评论家设定有点老套，但后厨群像还是好看。希望这季多给甜点师一点戏份。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av4">铁</div><span class="cmt-name">铁锈镇居民</span><span class="cmt-time">10月30日</span></div>
+        <p class="cmt-text">《铁锈年代》完结有点舍不得，最后两集收得稳。服化道真的用心，那种工业衰退的质感拍出来了。衍生剧希望别换味道。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av5">雾</div><span class="cmt-name">雾港来客</span><span class="cmt-time">10月29日</span></div>
+        <p class="cmt-text">新剧《雾港档案》第一集抛了三个案子，有点冒险。不过摄影色调我很喜欢，先追两集看看能不能圆回来。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av1">老</div><span class="cmt-name">老剧重刷党</span><span class="cmt-time">10月28日</span></div>
+        <p class="cmt-text">人人美剧这个页面整理得挺方便，类型标签和更新进度一眼能看清。就是希望多加点老剧的条目，新剧虽好但经典也值得回顾。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av2">周</div><span class="cmt-name">周末看什么</span><span class="cmt-time">10月27日</span></div>
+        <p class="cmt-text">按这个榜单试了《最后辩词》，意外地对胃口。以前总觉得律政剧门槛高，其实跟着案件看下来还好，人物关系也不复杂。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av3">不</div><span class="cmt-name">不熬夜很难</span><span class="cmt-time">10月26日</span></div>
+        <p class="cmt-text">《裂隙之城》和《潮汐线》连着看，一个靠逻辑一个靠氛围，完全不同的紧张感。建议别同一天看，后劲有点大。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av4">追</div><span class="cmt-name">追更小分队</span><span class="cmt-time">10月25日</span></div>
+        <p class="cmt-text">页面更新挺及时的，周三周四集中看更新列表已经成为习惯了。希望续订消息也能及时标出来，有些剧等确认续订等得心焦。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av5">类</div><span class="cmt-name">类型片爱好者</span><span class="cmt-time">10月24日</span></div>
+        <p class="cmt-text">科幻类今年整体质量不错，但真正硬核的没几部。《星环之外》算一个，《深空信使》偏娱乐。希望明年多来点世界观扎实的。</p>
+      </div>
+      <div class="cmt-card">
+        <div class="cmt-head"><div class="cmt-avatar av1">新</div><span class="cmt-name">新入坑观众</span><span class="cmt-time">10月23日</span></div>
+        <p class="cmt-text">刚入美剧坑，这个页面对新手挺友好的。类型分得清楚，FAQ也回答了我想问的。就是剧太多了有点选择困难，先挑了两部喜剧试试。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 相关资讯 -->
+<section class="sec" id="news-feed">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>人人美剧相关资讯</h2>
+      <p>行业动态与内容观察</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <span class="news-date">2026-11-06</span>
+        <h4>秋季档过半，悬疑类美剧讨论度持续走高</h4>
+        <p>多部悬疑新剧进入中后段，观众对叙事节奏和反转质量的讨论明显增多。平台方也在调整周更策略，部分剧集尝试双集连播。</p>
+      </div>
+      <div class="news-card">
+        <span class="news-date">2026-11-05</span>
+        <h4>科幻剧《星环之外》确认制作第二季</h4>
+        <p>制作方在社交平台确认续订消息，第二季预计明年春季开拍。第一季剩余集数将聚焦信号源头的最终解释。</p>
+      </div>
+      <div class="news-card">
+        <span class="news-date">2026-11-03</span>
+        <h4>家庭喜剧回暖：多部新项目进入开发阶段</h4>
+        <p>经历几年低谷后，家庭喜剧类型出现回暖迹象。业内分析认为与观众对轻量内容的需求上升有关，多代同堂题材尤其受关注。</p>
+      </div>
+      <div class="news-card">
+        <span class="news-date">2026-10-31</span>
+        <h4>《铁锈年代》衍生剧确定主角人选</h4>
+        <p>衍生剧将围绕第二代角色展开，时间线设定在原剧结局十年后。原剧主创继续担任监制，预计明年下半年上线。</p>
+      </div>
+      <div class="news-card">
+        <span class="news-date">2026-10-29</span>
+        <h4>律政剧台词密度引发讨论，字幕组压力增大</h4>
+        <p>近期多部律政题材作品台词信息量偏高，观众对字幕准确性的关注度提升。部分平台开始提供更详细的背景注释。</p>
+      </div>
+      <div class="news-card">
+        <span class="news-date">2026-10-27</span>
+        <h4>新剧《雾港档案》首播表现平稳，后续走势待观察</h4>
+        <p>该剧首集采用多案件并行的叙事方式，评价分化。制作团队表示前十集会逐步收线，观众需要一定耐心。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/#top" class="logo"><span class="logo-mark">美</span>人人<span>美剧</span></a>
+        <p>人人美剧专题页是一个面向美剧爱好者的内容聚合站点，提供榜单、更新动态、深度解析与剧迷讨论。所有推荐信息仅供参考，请以实际播出内容为准。</p>
+      </div>
+      <div class="footer-col">
+        <h5>内容导航</h5>
+        <a href="/#rank-hot">热门榜单</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#watch-guide">追更指南</a>
+      </div>
+      <div class="footer-col">
+        <h5>类型专区</h5>
+        <a href="/#rank-hot">悬疑犯罪</a>
+        <a href="/#rank-hot">科幻奇幻</a>
+        <a href="/#rank-hot">律政职场</a>
+        <a href="/#rank-hot">家庭喜剧</a>
+      </div>
+      <div class="footer-col">
+        <h5>互动与帮助</h5>
+        <a href="/#faq">常见问题</a>
+        <a href="/#community">剧迷评论</a>
+        <a href="/#news-feed">相关资讯</a>
+        <a href="/#intro">专题简介</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 人人美剧专题页 · 内容仅供学习与交流参考</span>
+      <span>友情链接占位：美剧资讯站 | 剧集资料库 | 观众讨论社区</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+          </html>
